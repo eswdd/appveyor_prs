@@ -1,12 +1,18 @@
-build: off
+pull_requests:
+  do_not_increment_build_number: true
+
+environment:
+  GOPATH: /home/appveyor/gopath
+  GITHUB_TOKEN:
+    secure: ILjtod4amc8qbu9UkxzEOF1DI47r4SghDHTHc5APyiXnkALzNBTPwEiEcxJ1k9nC
+
+build:
+  verbosity: detailed
 
 image:
 - Ubuntu
 
 clone_folder: /home/appveyor/appveyor_prs
-
-environment:
-  GOPATH: /home/appveyor/gopath
 
 branches:
   only:
