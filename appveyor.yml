@@ -20,7 +20,9 @@ install:
 - go get -v -t github.com/eswdd/appveyor_pr_checker
 - cd /home/appveyor/gopath/src/github.com/eswdd/appveyor_pr_checker
 - go build ./...
+- ls
 
 test_script:
-  - main --help
+  - cd /home/appveyor/appveyor_prs
+  - /home/appveyor/gopath/src/github.com/eswdd/appveyor_pr_checker/main --help
 
