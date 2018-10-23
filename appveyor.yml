@@ -1,3 +1,12 @@
+pull_requests:
+  do_not_increment_build_number: true
+version: build-{build}
+
+environment:
+  GOPATH: /home/appveyor/gopath
+  GITHUB_TOKEN:
+    secure: hELAI4G5fGKHffQInpsVRVdbEXvSQrbY6JpDj8irGLWKrB/fimFXV+wyZrC8ERkM
+
 build: off
 
 image:
@@ -5,16 +14,19 @@ image:
 
 clone_folder: /home/appveyor/appveyor_prs
 
-environment:
-  GOPATH: /home/appveyor/gopath
+branches:
+  only:
+    - master
 
 stack: go 1.11
 
 install:
+- sudo apt-get --yes install jq
 - export GOPATH=/home/appveyor/gopath
 - echo $PATH
 - echo $GOPATH
 - export PATH=$GOPATH%/bin:$PATH
+- git status
 - go version
 - go env
 - go get -v -t github.com/eswdd/appveyor_pr_checker
@@ -24,5 +36,5 @@ install:
 
 test_script:
   - cd /home/appveyor/appveyor_prs
-  - bash -x ./appveyor.sh
+  - ./appveyor.sh
 
