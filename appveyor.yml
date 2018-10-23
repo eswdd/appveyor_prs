@@ -3,8 +3,6 @@ pull_requests:
 
 environment:
   GOPATH: /home/appveyor/gopath
-  GITHUB_TOKEN:
-    secure: ILjtod4amc8qbu9UkxzEOF1DI47r4SghDHTHc5APyiXnkALzNBTPwEiEcxJ1k9nC
 
 build: off
 
