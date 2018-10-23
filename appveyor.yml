@@ -24,6 +24,5 @@ install:
 
 test_script:
   - cd /home/appveyor/appveyor_prs
-  - ls $GOPATH/bin
-  - /home/appveyor/gopath/src/github.com/eswdd/appveyor_pr_checker/appveyor_pr_checker --help
+  - bash -x ./appveyor.sh
 
