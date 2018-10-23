@@ -8,6 +8,10 @@ clone_folder: /home/appveyor/appveyor_prs
 environment:
   GOPATH: /home/appveyor/gopath
 
+branches:
+  only:
+    - master
+
 stack: go 1.11
 
 install:
