@@ -4,6 +4,8 @@ version: build-{build}
 
 environment:
   GOPATH: /home/appveyor/gopath
+  GITHUB_TOKEN:
+    secure: KLHdQ8mdhqoZHDqhmz5ETwnQEoYadTaHowfFGH7RdCMW+JNg6HxEpmhsP0Gr4PH3
 
 build: off
 
