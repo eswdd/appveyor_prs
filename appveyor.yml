@@ -31,5 +31,5 @@ install:
 
 test_script:
   - cd /home/appveyor/appveyor_prs
-  - bash -x ./appveyor.sh
+  - ./appveyor.sh
 
