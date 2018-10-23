@@ -17,7 +17,7 @@ install:
 - export PATH=$GOPATH%/bin:$PATH
 - printenv
 - git status
-- sudo apt-get install jq
+- sudo apt-get --yes install jq
 - go version
 - go env
 - go get -v -t github.com/eswdd/appveyor_pr_checker
