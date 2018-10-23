@@ -1,0 +1,26 @@
+build: off
+
+image:
+- Ubuntu
+
+clone_folder: /home/appveyor/appveyor_prs
+
+environment:
+  GOPATH: /home/appveyor/gopath
+
+stack: go 1.11
+
+install:
+- export GOPATH=/home/appveyor/gopath
+- echo $PATH
+- echo $GOPATH
+- export PATH=$GOPATH%/bin:$PATH
+- go version
+- go env
+- go get -v -t github.com/eswdd/appveyor_pr_checker
+- cd /home/appveyor/gopath/src/github.com/eswdd/appveyor_pr_checker
+- go build ./...
+
+test_script:
+  - main --help
+
