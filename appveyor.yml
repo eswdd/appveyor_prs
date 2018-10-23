@@ -5,7 +5,7 @@ version: build-{build}
 environment:
   GOPATH: /home/appveyor/gopath
   GITHUB_TOKEN:
-    secure: KLHdQ8mdhqoZHDqhmz5ETwnQEoYadTaHowfFGH7RdCMW+JNg6HxEpmhsP0Gr4PH3
+    secure: hELAI4G5fGKHffQInpsVRVdbEXvSQrbY6JpDj8irGLWKrB/fimFXV+wyZrC8ERkM
 
 build: off
 
@@ -21,13 +21,12 @@ branches:
 stack: go 1.11
 
 install:
+- sudo apt-get --yes install jq
 - export GOPATH=/home/appveyor/gopath
 - echo $PATH
 - echo $GOPATH
 - export PATH=$GOPATH%/bin:$PATH
-- printenv
 - git status
-- sudo apt-get --yes install jq
 - go version
 - go env
 - go get -v -t github.com/eswdd/appveyor_pr_checker
