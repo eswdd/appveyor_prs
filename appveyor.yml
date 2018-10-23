@@ -16,6 +16,7 @@ install:
 - echo $GOPATH
 - export PATH=$GOPATH%/bin:$PATH
 - printenv
+- git status
 - sudo apt-get install jq
 - go version
 - go env
