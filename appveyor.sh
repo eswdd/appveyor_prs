@@ -14,6 +14,11 @@ else
   MESSAGE="$( cat report.md )"
   PAYLOAD="$( jq -nc --arg str "${MESSAGE}" '{"body": $str}' )"
   echo ">>> Posting report to PR <<<"
-  curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST -d "${PAYLOAD}" "https://api.github.com/repos/${APPVEYOR_REPO_NAME}/issues/${APPVEYOR_PULL_REQUEST_NUMBER}/comments"
+  CURL_OUTPUT=`curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST -d "${PAYLOAD}" "https://api.github.com/repos/${APPVEYOR_REPO_NAME}/issues/${APPVEYOR_PULL_REQUEST_NUMBER}/comments"`
+  CURL_RESULT=$?
+  if [[ $CURL_RESULT -ne 0 ]]; then
+    echo ">>> Failed to post report, curl output follows <<<"
+    echo ${CURL_OUTPUT}
+  fi
   exit $TO_EXIT
 fi
