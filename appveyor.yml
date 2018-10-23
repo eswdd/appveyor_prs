@@ -1,6 +1,6 @@
 pull_requests:
   do_not_increment_build_number: true
-version: {build}
+version: build-{build}
 
 environment:
   GOPATH: /home/appveyor/gopath
