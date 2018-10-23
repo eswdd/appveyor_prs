@@ -6,8 +6,7 @@ environment:
   GITHUB_TOKEN:
     secure: ILjtod4amc8qbu9UkxzEOF1DI47r4SghDHTHc5APyiXnkALzNBTPwEiEcxJ1k9nC
 
-build: Script
-  verbosity: detailed
+build: off
 
 image:
 - Ubuntu
